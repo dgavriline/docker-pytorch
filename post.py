@@ -1,5 +1,5 @@
 
 import requests
-url = 'http://localhost:8000/home/dennis/Desktop/craterlabs/blackhole.jpg'
-resp = requests.post(url,files={'file': open('/home/dennis/Desktop/craterlabs/blackhole.jpg','rb')})
+url = 'http://localhost:8000/guessthis.jpg'
+resp = requests.post(url,files={'file': open('/guessthis.jpg','rb')})
 print (resp.json())
