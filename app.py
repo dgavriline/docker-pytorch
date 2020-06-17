@@ -6,7 +6,7 @@ from PIL import Image
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
-imagenet_class_index = json.load(open('/home/dennis/Desktop/craterlabs/imagenet_class_index.json'))
+imagenet_class_index = json.load(open('/imagenet_class_index.json'))
 model = models.densenet121(pretrained=True)
 model.eval()
 
@@ -30,7 +30,7 @@ def get_prediction(image_bytes):
     return imagenet_class_index[predicted_idx]
 
 
-@app.route('/home/dennis/Desktop/craterlabs/blackhole.jpg', methods=['POST', 'GET'])
+@app.route('/guessthis.jpg', methods=['POST', 'GET'])
 def predict():
     if request.method == 'POST':
         file = request.files['file']
@@ -38,7 +38,7 @@ def predict():
         class_id, class_name = get_prediction(image_bytes=img_bytes)
         return jsonify({'class_id': class_id, 'class_name': class_name})
 
-with open("/home/dennis/Desktop/craterlabs/blackhole.jpg", 'rb') as f:
+with open("guessthis.jpg", 'rb') as f:
     image_bytes = f.read()
     print(get_prediction(image_bytes=image_bytes))
 
