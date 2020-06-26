@@ -14,3 +14,4 @@ RUN apt-get install -y\
 RUN pip3 install Flask==1.1.2 torchvision==0.6.0
 COPY "./startScript.sh" .
 ENTRYPOINT ["bash", "startScript.sh"]
+# use command: sudo docker run --runtime=nvidia -it --rm CONTAINER_ID
