@@ -45,7 +45,6 @@ simplejson==3.13.2
 six==1.15.0
 torch==1.5.0
 torchvision==0.6.0
-ubuntu-drivers-common==0.0.0
 ufw==0.36
 unattended-upgrades==0.1
 urllib3==1.25.9
